@@ -1,3 +1,4 @@
+import java.util.Arrays;
 
 public class App {
     public static void main(String[] args) {
@@ -46,13 +47,13 @@ public class App {
         personas[8] = new Persona("Elena",5);
         personas[9] = new Persona("ElDurisimo",50);
 
-        int personasMayores = (int) Array.stream(personas)
-        .filter(persona -> personas.getEdad()>=18).count();
+        int personasMayores = (int) Arrays.stream(personas)
+        .filter(persona -> persona.getEdad()>=18).count();
 
-        personasMenores = personas.length - personasMayores;
+        int personasMenores = personas.length - personasMayores;
 
-        Par<Integer,String>[] mayores = new Par[10];
-        Par<String, Integer>[] menores = new Par[10];
+        Par<Integer,String>[] mayores = new Par[personasMayores];
+        Par<String, Integer>[] menores = new Par[personasMenores];
 
         int iMayores=0;
         int iMenores=0;
